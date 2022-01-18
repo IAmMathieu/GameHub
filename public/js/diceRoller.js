@@ -224,6 +224,6 @@ var game = {
   },
 };
 
-// game.init();
+//game.init();
 // on execute init seulement quand on est sûr que le document est prêt
-document.addEventListener('DOMContentLoaded', game.init);
+ document.addEventListener('DOMContentLoaded', game.init);

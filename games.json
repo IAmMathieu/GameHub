@@ -10,5 +10,11 @@
     "title": "Dice Roller",
     "cssFile": "diceRoller.css",
     "jsFile": "diceRoller.js"
+  },
+  {
+    "name": "grunt",
+    "title": "Grunt RPG",
+    "cssFile": "grunt.css",
+    "jsFile": "grunt.js"
   }
 ]
