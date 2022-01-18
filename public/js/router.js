@@ -10,25 +10,33 @@ router.get('/', (req, res) => {
     console.log(__dirname);
 })
 
-
 router.get('/game/:nomDuJeu', (req, res) => {
     const askedGame = req.params.nomDuJeu;
 
+    let foundGame = null;
     // on récupère depuis la page retournée par le navigateur (en parm)
     // l'id de la route du jeu vers lequel on veut aller.
     // attention on doit qd même vérifier que celle-ce soit valide sinon on retourne une page 404.
-    for (const game of games) {
+
+    for (let game of games) {
         if (game.name === askedGame) {
-            res.render(game.name, {
+            foundGame = game;
+            break;
+        }
+    }
+
+        if (foundGame) {
+            res.render(foundGame.name, {
             gamesVue: games,
             })
         } else {
             res.status(404);
-            res.render('404');
+            res.render('404', {
+                gamesVue: games,
+            });
         }
     }
-
-});
+);
 
 router.get('*', (req, res) => {
     res.status(404);
