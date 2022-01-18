@@ -18,7 +18,7 @@ server.set('views', pathToViews);
 
 
 // le chemin absolu vers le dossier contenant les fichiers statiques à servir
-const pathToStaticDirectory = path.resolve(__dirname, '../public');
+const pathToStaticDirectory = path.resolve(__dirname, '../../public');
 // de quoi servir tous les fichiers
 const allStaticFiles = express.static(pathToStaticDirectory);
 // on configure le serveur pour servir les fichiers du dossier configuré au dessus

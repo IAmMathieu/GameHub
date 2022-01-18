@@ -2,11 +2,14 @@ const express = require('express');
 const router = express.Router();
 const games = require('./../../games.json');
 
+
 router.get('/', (req, res) => {
     res.render('index', {
         gamesVue: games,
     })
+    console.log(__dirname);
 })
+
 
 router.get('/game/:nomDuJeu', (req, res) => {
     const askedGame = req.params.nomDuJeu;

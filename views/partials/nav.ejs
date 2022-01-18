@@ -1,7 +1,8 @@
 <!-- Attention href='correspond à l'url' -->
-
-<ul>
-    <% for (const game of gamesVue) { %>
-        <li><a href="/game/<%= game.name %>"><%= game.name %></a></li>
-    <% } %>
-</ul>
+<nav>
+    <ul>
+        <% for (const game of gamesVue) { %>
+            <li><a href="/game/<%= game.name %>"><%= game.name %></a></li>
+        <% } %>
+    </ul>
+</nav>
