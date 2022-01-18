@@ -4,7 +4,8 @@
   "description": "Challenge pair-prog S03",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node-dev index"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "node-dev": "^7.1.0"
   }
 }
