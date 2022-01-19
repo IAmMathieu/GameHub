@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const games = require('./../../games.json');
 
+let foundGame = null;
 
 router.get('/', (req, res) => {
     res.render('index', {
@@ -13,7 +14,6 @@ router.get('/', (req, res) => {
 router.get('/game/:nomDuJeu', (req, res) => {
     const askedGame = req.params.nomDuJeu;
 
-    let foundGame = null;
     // on récupère depuis la page retournée par le navigateur (en parm)
     // l'id de la route du jeu vers lequel on veut aller.
     // attention on doit qd même vérifier que celle-ce soit valide sinon on retourne une page 404.
@@ -24,15 +24,16 @@ router.get('/game/:nomDuJeu', (req, res) => {
             break;
         }
     }
-
         if (foundGame) {
             res.render(foundGame.name, {
             gamesVue: games,
+            gameName: foundGame.name
             })
         } else {
             res.status(404);
             res.render('404', {
                 gamesVue: games,
+                gameName: foundGame.name
             });
         }
     }
